@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Checker</h1>
+        <input type="password" id="password" placeholder="Enter your password">
+        <button onclick="checkPassword()">Check Strength</button>
+        <div id="result"></div>
+        <div id="feedback"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            fetch('/check_password', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ password: password }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.textContent = `Strength: ${data.strength}`;
+                resultDiv.style.backgroundColor = getColor(data.score);
+                
+                const feedbackDiv = document.getElementById('feedback');
+                feedbackDiv.innerHTML = data.feedback.map(item => `<p>• ${item}</p>`).join('');
+            });
+        }
+
+        function getColor(score) {
+            const colors = ['#ff4e50', '#fc913a', '#f9d62e', '#9bc53d', '#5ec4b7'];
+            return colors[Math.min(score, 4)];
+        }
+    </script>
+</body>
+</html>
