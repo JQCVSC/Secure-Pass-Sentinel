@@ -1,5 +1,3 @@
-markdownCopy# SecurePass Sentinel
-
 SecurePass Sentinel is a web application designed to evaluate password strength. It provides instant feedback on password security, helping users create stronger, more secure passwords.
 
 ## Setup
