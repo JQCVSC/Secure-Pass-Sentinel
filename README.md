@@ -11,13 +11,13 @@ SecurePass Sentinel is a web application designed to evaluate password strength.
 
 Run the tests using the following command:
 python -m unittest tests/test_password_checker.py
-Copy
+
 ## Docker
 
 To build and run the Docker container:
 docker build -t securepass-sentinel .
 docker run -p 8080:8080 securepass-sentinel
-Copy
+
 
 ## Deployment to Google Cloud Platform (Optional)
 
