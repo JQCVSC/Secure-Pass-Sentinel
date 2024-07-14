@@ -1,5 +1,7 @@
 SecurePass Sentinel is a web application designed to evaluate password strength. It provides instant feedback on password security, helping users create stronger, more secure passwords.
 
+![Screenshot 2024-07-13 185226](https://github.com/user-attachments/assets/832fd2ae-61e9-4e0b-8e82-e505c31a122d)
+
 ## Setup
 
 1. Clone the repository
