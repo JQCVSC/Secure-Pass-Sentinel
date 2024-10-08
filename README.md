@@ -31,9 +31,12 @@ To deploy this application to GCP, follow these steps:
 4. Authenticate with GCP: `gcloud auth login`
 5. Set your project ID: `gcloud config set project YOUR_PROJECT_ID`
 6. Build and deploy the application:
+```bash
 gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/securepass-sentinel
+```
+```bash
 gcloud run deploy --image gcr.io/YOUR_PROJECT_ID/securepass-sentinel --platform managed
-Copy
+```
 Replace YOUR_PROJECT_ID with your actual GCP project ID.
 
 Note: Deploying to GCP may incur costs. Be sure to review the pricing and set up billing alerts.
